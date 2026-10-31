@@ -28,4 +28,4 @@
 
 ## 環境
 - Windows。スキル・フック・エージェントは全プロジェクト共通で `~/.claude/` にある
-- 実装の技術構成はステップ2で決める（決まったらここに追記する）
+- 技術構成：Vite + Svelte（TypeScriptなし）、保存は localStorage。起動は `npm run dev`

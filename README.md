@@ -15,4 +15,8 @@
 | 過去の作業 | `docs/logs/` |
 
 ## 起動方法
-（ステップ2で追記）
+```
+npm install
+npm run dev   # http://localhost:5173
+npm test
+```

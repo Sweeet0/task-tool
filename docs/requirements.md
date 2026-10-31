@@ -14,10 +14,24 @@
 - 入力先は選択式（デフォルトはInbox）
 - 上スワイプで各画面のトップへ戻る
 - AIがデータを読める形にする（方式はステップ1で決める）
+- 1タスクの項目（9個）：
+  | 項目 | 内容 |
+  |---|---|
+  | id | 一意の文字列 |
+  | title | タスク名 |
+  | status | `open` / `done` |
+  | list | 入力先（既定 `inbox`）。プロジェクトもここに含める |
+  | createdAt | 作成日時 |
+  | doneAt | 完了日時 |
+  | nextAction | 次の一手 |
+  | updatedAt | 更新日時 |
+  | note | 自由メモ |
+- 保存形式：JSON。エクスポートは `tasks.json` 1ファイル `{ "version": 1, "exportedAt": ISO日時, "tasks": [...] }`。日時はISO文字列、値なしは `doneAt` が `null`、`nextAction`・`note` が空文字
+- AIの読み方：エクスポートした `tasks.json` をClaude Codeに読ませる（受け渡しの詳細はステップ4）
+- データの置き場所：ブラウザ内保存＋JSONエクスポート。同期はステップ6で再検討（1タスク＝1項目で持つ）
+- 技術構成：Vite + Svelte（TypeScriptなし）、保存は localStorage
 
 ## 未決定
 - 未来への送り方
 - 左右画面の詳細
 - 「やる気ゼロ」の中身
-- データの置き場所と形式
-- 技術構成
