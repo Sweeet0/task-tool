@@ -72,13 +72,14 @@
 <style>
   main { max-width: 480px; margin: 0 auto; padding: 16px; font-family: system-ui, sans-serif; }
   form { display: grid; gap: 8px; margin-bottom: 16px; }
-  input, select, button[type='submit'] { font: inherit; padding: 8px; }
+  input, select, button[type='submit'] { font: inherit; font-size: 16px; padding: 8px; min-height: 44px; box-sizing: border-box; }
   ul { list-style: none; padding: 0; margin: 0; }
   li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #eee; }
-  li span { flex: 1; }
-  li small { color: #888; }
+  li span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+  li small { color: #888; flex-shrink: 0; max-width: 30%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   li.done span { text-decoration: line-through; color: #999; }
   h2 { font-size: 0.9rem; color: #888; margin: 24px 0 4px; }
-  .check { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #999; background: none; padding: 0; cursor: pointer; }
+  .check { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #999; background: none; padding: 0; cursor: pointer; position: relative; flex-shrink: 0; }
+  .check::after { content: ''; position: absolute; inset: -10px; }
   .check.on { background: #4a8; border-color: #4a8; color: #fff; }
 </style>
